@@ -1,1 +1,1 @@
-from common_project import *
+from . import common_project_func

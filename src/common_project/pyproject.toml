@@ -3,13 +3,24 @@ name = "common-project"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-authors = [
-    { name = "Tathn", email = "siewniak.patryk@gmail.com" }
-]
 requires-python = ">=3.13"
 dependencies = []
 
-#[project.scripts]
+[tool.uv]
+package = true
+
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+#[tool.setuptools]
+#packages = ["common_project"]
+#package-dir = {"" = "src"}
+
+#[project.scripts
 #common-project = "common_project:main"
 #common-project = "common_project:*"
 
@@ -26,13 +37,3 @@ dependencies = []
 #module-root = "src"
 #source-include = ["src/**"]
 
-[tool.uv]
-package = true
-
-[build-system]
-requires = ["setuptools >= 61.0"]
-build-backend = "setuptools.build_meta"
-
-[tool.setuptools.packages.find]
-where = ["src"]
-include = ["common_project"]
